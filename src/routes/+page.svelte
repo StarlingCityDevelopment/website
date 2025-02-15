@@ -145,7 +145,7 @@
 					</p>
 					<div class="mt-10 flex items-center justify-center gap-x-6">
 						<a
-							href="https://discord.gg/starlingrp"
+							href="https://discord.gg/VkURFbj5JX"
 							class="shadow-xs rounded-md bg-red-600 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
 							>Discord</a
 						>
