@@ -1,0 +1,68 @@
+{
+	"files": {
+		"include": ["src/**/*.ts", "src/**/*.svelte"]
+	},
+	"formatter": {
+		"enabled": true,
+		"useEditorconfig": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineEnding": "lf",
+		"lineWidth": 100,
+		"attributePosition": "auto",
+		"bracketSpacing": true,
+		"ignore": [
+			"**/package-lock.json",
+			"**/pnpm-lock.yaml",
+			"**/yarn.lock",
+			"**/bun.lock",
+			"**/bun.lockb"
+		]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"complexity": {
+				"noBannedTypes": "off",
+				"noForEach": "off",
+				"noUselessConstructor": "off"
+			},
+			"correctness": { "noUnusedLabels": "off", "noVoidTypeReturn": "off" },
+			"performance": { "noDelete": "off" },
+			"style": {
+				"noArguments": "off",
+				"noInferrableTypes": "off",
+				"noNonNullAssertion": "off",
+				"noParameterAssign": "off",
+				"noUnusedTemplateLiteral": {
+					"level": "warn",
+					"fix": "safe"
+				},
+				"useConst": "off",
+				"useEnumInitializers": "off"
+			},
+			"suspicious": {
+				"noAssignInExpressions": "off",
+				"noConfusingLabels": "off",
+				"noExplicitAny": "off",
+				"noFallthroughSwitchClause": "off"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "none",
+			"semicolons": "asNeeded",
+			"arrowParentheses": "always",
+			"bracketSameLine": false,
+			"quoteStyle": "single",
+			"attributePosition": "auto",
+			"bracketSpacing": true
+		}
+	},
+	"json": { "formatter": { "trailingCommas": "none" } },
+	"overrides": [{ "include": ["*.svelte"] }]
+}
