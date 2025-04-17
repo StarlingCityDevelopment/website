@@ -5,7 +5,9 @@ import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 const config = {
   preprocess: [vitePreprocess(), mdsvex()],
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      strict: true,
+    }),
     alias: {
       "@/*": "./src/lib/*",
     },
