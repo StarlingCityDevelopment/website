@@ -6,7 +6,7 @@ const config = {
   preprocess: [vitePreprocess(), mdsvex()],
   kit: {
     adapter: adapter({
-      strict: true,
+      strict: false,
     }),
     alias: {
       "@/*": "./src/lib/*",
