@@ -1,13 +1,13 @@
 <script lang="ts">
-  import "../app.css";
-  import Logo from "$lib/assets/images/bird.png";
-  import Button from "$lib/components/ui/button/button.svelte";
-  import { Menu, X } from "@lucide/svelte";
+import '../app.css'
+import Logo from '$lib/assets/images/bird.png'
+import Button from '$lib/components/ui/button/button.svelte'
+import { Menu, X } from '@lucide/svelte'
 
-  let pages = [{ name: "Team", href: "team" }];
+let pages = [{ name: 'Team', href: 'team' }]
 
-  let menuState = $state(false);
-  let { children } = $props();
+let menuState = $state(false)
+let { children } = $props()
 </script>
 
 <header>

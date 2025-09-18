@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { cn } from "@/utils";
+import { cn } from '@/utils'
 
-  let { data } = $props();
+let { data } = $props()
 </script>
 
 <section class="py-32">

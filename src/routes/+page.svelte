@@ -1,7 +1,7 @@
 <script>
-  import Button from "$lib/components/ui/button/button.svelte";
-  import { ArrowRight, Rocket } from "@lucide/svelte";
-  let { data } = $props();
+import Button from '$lib/components/ui/button/button.svelte'
+import { ArrowRight, Rocket } from '@lucide/svelte'
+let { data } = $props()
 </script>
 
 <main class="overflow-hidden">

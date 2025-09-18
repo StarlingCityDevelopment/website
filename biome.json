@@ -1,6 +1,6 @@
 {
 	"files": {
-		"include": ["src/**/*.ts", "src/**/*.svelte"]
+		"includes": ["src/**/*.ts", "src/**/*.svelte"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -11,14 +11,7 @@
 		"lineEnding": "lf",
 		"lineWidth": 100,
 		"attributePosition": "auto",
-		"bracketSpacing": true,
-		"ignore": [
-			"**/package-lock.json",
-			"**/pnpm-lock.yaml",
-			"**/yarn.lock",
-			"**/bun.lock",
-			"**/bun.lockb"
-		]
+		"bracketSpacing": true
 	},
 	"linter": {
 		"enabled": true,
@@ -31,7 +24,6 @@
 			"correctness": { "noUnusedLabels": "off", "noVoidTypeReturn": "off" },
 			"performance": { "noDelete": "off" },
 			"style": {
-				"noArguments": "off",
 				"noInferrableTypes": "off",
 				"noNonNullAssertion": "off",
 				"noParameterAssign": "off",
@@ -64,5 +56,5 @@
 		}
 	},
 	"json": { "formatter": { "trailingCommas": "none" } },
-	"overrides": [{ "include": ["*.svelte"] }]
+	"overrides": [{ "includes": ["*.svelte"] }]
 }
