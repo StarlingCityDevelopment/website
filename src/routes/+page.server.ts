@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_KEY, API_KEY_SERVER } from '$env/static/private';
+import { API_KEY_BOT, API_KEY_SERVER } from '$env/static/private';
 
 export async function load() {
   let members = 0;
@@ -11,7 +11,7 @@ export async function load() {
     maxBodyLength: Infinity,
     url: "https://protectbot.starlingrp.fr/api/guilds/919277067693076560/members/count",
     headers: {
-      Authorization: "Bearer " + API_KEY,
+      Authorization: "Bearer " + API_KEY_BOT,
     },
   }).then((response) => {
     if (response.status === 200 && response.data.success) {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_KEY } from '$env/static/private';
+import { API_KEY_BOT } from '$env/static/private';
 
 const teams = {
   Leadership: [
@@ -25,7 +25,7 @@ export async function load() {
         url: "https://protectbot.starlingrp.fr/api/users/" + member,
         headers: {
           Authorization:
-            "Bearer " + API_KEY,
+            "Bearer " + API_KEY_BOT,
         },
       });
       if (!response.status || response.status !== 200) continue;
