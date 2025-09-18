@@ -1,6 +1,7 @@
 <script>
   import Button from "$lib/components/ui/button/button.svelte";
   import { ArrowRight, Rocket } from "@lucide/svelte";
+  let { data } = $props();
 </script>
 
 <main class="overflow-hidden">
@@ -46,15 +47,15 @@
     <div class="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
         <div class="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
             <div class="space-y-4">
-                <div class="text-5xl font-bold">1200</div>
+                <div class="text-5xl font-bold">{data.members}</div>
                 <p>Membres</p>
             </div>
             <div class="space-y-4">
-                <div class="text-5xl font-bold">22</div>
+                <div class="text-5xl font-bold">{data.connected}</div>
                 <p>Joueurs connecté</p>
             </div>
             <div class="space-y-4">
-                <div class="text-5xl font-bold">128</div>
+                <div class="text-5xl font-bold">{data.slots}</div>
                 <p>Slots</p>
             </div>
         </div>
