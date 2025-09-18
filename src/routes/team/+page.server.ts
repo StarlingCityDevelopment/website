@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { API_KEY_BOT } from '$env/static/private'
 
 const teams = {
 	Leadership: ['447685920423149579', '265114006845521920', '594547541798813716']
@@ -20,7 +19,7 @@ export async function load() {
 				maxBodyLength: Infinity,
 				url: `https://protectbot.starlingrp.fr/api/users/${member}`,
 				headers: {
-					Authorization: `Bearer ${API_KEY_BOT}`
+					Authorization: `Bearer ${process.env.API_KEY_BOT}`
 				}
 			})
 			if (!response.status || response.status !== 200) continue

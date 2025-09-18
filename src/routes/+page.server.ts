@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { API_KEY_BOT, API_KEY_SERVER } from '$env/static/private'
 
 export async function load() {
 	let members = 0
@@ -12,7 +11,7 @@ export async function load() {
 			maxBodyLength: Infinity,
 			url: 'https://protectbot.starlingrp.fr/api/guilds/919277067693076560/members/count',
 			headers: {
-				Authorization: `Bearer ${API_KEY_BOT}`
+				Authorization: `Bearer ${process.env.API_KEY_BOT}`
 			}
 		})
 		.then((response) => {
@@ -30,7 +29,7 @@ export async function load() {
 			maxBodyLength: Infinity,
 			url: 'https://fmprod.starlingrp.fr/restfx/players/count',
 			headers: {
-				Authorization: `Bearer ${API_KEY_SERVER}`
+				Authorization: `Bearer ${process.env.API_KEY_SERVER}`
 			}
 		})
 		.then((response) => {
@@ -48,7 +47,7 @@ export async function load() {
 			maxBodyLength: Infinity,
 			url: 'https://fmprod.starlingrp.fr/restfx/players/max',
 			headers: {
-				Authorization: `Bearer ${API_KEY_SERVER}`
+				Authorization: `Bearer ${process.env.API_KEY_SERVER}`
 			}
 		})
 		.then((response) => {
