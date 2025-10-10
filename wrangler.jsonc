@@ -3,11 +3,11 @@
 	"main": ".svelte-kit/cloudflare/_worker.js",
 	"compatibility_flags": [
 		"nodejs_compat",
-		"disable_nodejs_process_v2",
+		"disable_nodejs_process_v2"
 	],
-	"compatibility_date": "2025-01-01",
+	"compatibility_date": "2025-09-15",
 	"assets": {
 		"binding": "ASSETS",
-		"directory": ".svelte-kit/cloudflare",
+		"directory": ".svelte-kit/cloudflare"
 	}
 }
