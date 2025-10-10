@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 import axios from 'axios'
 
 const teams = {
@@ -14,22 +16,26 @@ export async function load() {
 		}[] = []
 
 		for (const member of teams[team as keyof typeof teams]) {
-			const response = await axios.request({
-				method: 'get',
-				maxBodyLength: Infinity,
-				url: `https://protectbot.starlingrp.fr/api/users/${member}`,
-				headers: {
-					Authorization: `Bearer ${process.env.API_KEY_BOT}`
-				}
-			})
-			if (!response.status || response.status !== 200) continue
-			if (response.data.success) {
-				members.push({
-					name: response.data.user.globalName,
-					avatar: response.data.user.avatarURL
+			try {
+				const response = await axios.request({
+					method: 'get',
+					maxBodyLength: Infinity,
+					url: `https://protectbot.starlingrp.fr/api/users/${member}`,
+					headers: {
+						Authorization: `Bearer ${process.env.API_KEY_BOT}`
+					}
 				})
-			} else {
-				console.log('Error: ' + response.data.message)
+				if (!response.status || response.status !== 200) continue
+				if (response.data.success) {
+					members.push({
+						name: response.data.user.globalName,
+						avatar: response.data.user.avatarURL
+					})
+				} else {
+					console.log(`Request failed: ${response.data.message}`)
+				}
+			} catch (error) {
+				console.log(`Request failed: ${error}`)
 			}
 		}
 

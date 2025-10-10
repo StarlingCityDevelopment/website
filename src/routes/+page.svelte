@@ -19,7 +19,7 @@ let { data } = $props()
               class="bg-muted rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs"
               >Beta</span
             >
-            <span class="text-sm">Ouverture prochainement</span>
+            <span class="text-sm">Ouverture publique</span>
             <span class="bg-(--color-border) block h-4 w-px"></span>
 
             <ArrowRight class="size-4" />

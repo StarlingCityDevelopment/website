@@ -1,10 +1,14 @@
 <script lang="ts">
 import '../app.css'
+
 import Logo from '$lib/assets/images/bird.png'
 import Button from '$lib/components/ui/button/button.svelte'
 import { Menu, X } from '@lucide/svelte'
 
-let pages = [{ name: 'Team', href: 'team' }]
+let pages = [
+	{ name: 'Team', href: 'team' },
+	{ name: 'Wiki', href: 'https://wiki.starlingrp.fr' }
+]
 
 let menuState = $state(false)
 let { children } = $props()
