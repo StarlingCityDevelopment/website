@@ -10,34 +10,34 @@ export async function load() {
 	let allTeam = []
 
 	for (const team in teams) {
-		const members: {
-			name: string
-			avatar: string
-		}[] = []
-
-		for (const member of teams[team as keyof typeof teams]) {
+		const memberPromises = teams[team as keyof typeof teams].map(async (member) => {
 			try {
 				const response = await axios.request({
 					method: 'get',
 					maxBodyLength: Infinity,
-					url: `https://protectbot.starlingrp.fr/api/users/${member}`,
+					url: `https://protect.starlingrp.fr/api/users/${member}`,
 					headers: {
 						Authorization: `Bearer ${process.env.API_KEY_BOT}`
 					}
 				})
-				if (!response.status || response.status !== 200) continue
+				if (!response.status || response.status !== 200) return null
 				if (response.data.success) {
-					members.push({
+					return {
 						name: response.data.user.globalName,
 						avatar: response.data.user.avatarURL
-					})
+					}
 				} else {
 					console.log(`Request failed: ${response.data.message}`)
+					return null
 				}
 			} catch (error) {
 				console.log(`Request failed: ${error}`)
+				return null
 			}
-		}
+		})
+
+		const results = await Promise.all(memberPromises)
+		const members = results.filter((member) => member !== null) as { name: string; avatar: string }[]
 
 		allTeam.push({
 			name: team,

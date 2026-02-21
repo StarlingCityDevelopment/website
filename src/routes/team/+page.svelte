@@ -1,12 +1,28 @@
 <script lang="ts">
-import { cn } from '@/utils'
+  import { cn } from "@/utils";
 
-let { data } = $props()
+  let { data } = $props();
 </script>
+
+<svelte:head>
+  <title>L'Équipe Starling City: Découvrez notre Staff RP</title>
+  <meta
+    name="description"
+    content="Rencontrez l'équipe d'administration et de gestion derrière Starling City. Découvrez le staff dédié à vous offrir la meilleure expérience GTA V Roleplay."
+  />
+  <meta
+    property="og:title"
+    content="L'Équipe Starling City: Découvrez notre Staff RP"
+  />
+  <meta
+    property="og:description"
+    content="Rencontrez l'équipe d'administration et de gestion derrière Starling City. Découvrez le staff dédié à vous offrir la meilleure expérience GTA V Roleplay."
+  />
+</svelte:head>
 
 <section class="py-32">
   <div class="mx-auto max-w-3xl px-8 lg:px-0">
-    <h2 class="mb-8 text-4xl font-bold md:mb-16 lg:text-5xl">Notre team</h2>
+    <h1 class="mb-8 text-4xl font-bold md:mb-16 lg:text-5xl">Notre team</h1>
     {#each data.allTeam as { name, members }, index}
       <div class={cn(index != 0 && "mt-6")}>
         <h3 class="mb-6 text-lg font-medium">{name}</h3>

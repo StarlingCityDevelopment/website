@@ -1,18 +1,42 @@
 <script lang="ts">
-import '../app.css'
+  import "../app.css";
 
-import Logo from '$lib/assets/images/bird.png'
-import Button from '$lib/components/ui/button/button.svelte'
-import { Menu, X } from '@lucide/svelte'
+  import Logo from "$lib/assets/images/bird.png";
+  import Button from "$lib/components/ui/button/button.svelte";
+  import { Menu, X } from "@lucide/svelte";
 
-let pages = [
-	{ name: 'Team', href: 'team' },
-	{ name: 'Wiki', href: 'https://wiki.starlingrp.fr' }
-]
+  let pages = [
+    { name: "Team", href: "team" },
+    { name: "Wiki", href: "https://wiki.starlingrp.fr" },
+  ];
 
-let menuState = $state(false)
-let { children } = $props()
+  let menuState = $state(false);
+  let { children } = $props();
 </script>
+
+<svelte:head>
+  <title>Starling City</title>
+  <meta property="og:site_name" content="Starling City" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#18181b" />
+  {@html `
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Starling City",
+        "url": "https://starlingrp.fr",
+        "logo": "https://starlingrp.fr/favicon.png",
+        "sameAs": [
+          "https://discord.gg/VkURFbj5JX",
+          "https://www.instagram.com/starling_cityrp",
+          "https://www.tiktok.com/@starling.city.rp"
+        ]
+      }
+    </script>
+  `}
+</svelte:head>
 
 <header>
   <nav
@@ -73,7 +97,11 @@ let { children } = $props()
           <div
             class="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:pl-6"
           >
-            <Button size="sm" href="https://discord.gg/VkURFbj5JX">
+            <Button
+              size="sm"
+              href="https://discord.gg/VkURFbj5JX"
+              title="Rejoindre notre Discord Starling City"
+            >
               <span class="text-nowrap">Discord</span>
             </Button>
           </div>
@@ -101,6 +129,7 @@ let { children } = $props()
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Instagram"
+        title="Suivez Starling City sur Instagram"
         class="text-muted-foreground hover:text-primary block"
       >
         <svg
@@ -121,6 +150,7 @@ let { children } = $props()
         target="_blank"
         rel="noopener noreferrer"
         aria-label="TikTok"
+        title="Découvrez nos vidéos TikTok Starling City RP"
         class="text-muted-foreground hover:text-primary block"
       >
         <svg

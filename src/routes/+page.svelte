@@ -1,8 +1,24 @@
 <script>
-import Button from '$lib/components/ui/button/button.svelte'
-import { ArrowRight, Rocket } from '@lucide/svelte'
-let { data } = $props()
+  import Button from "$lib/components/ui/button/button.svelte";
+  import { ArrowRight, Rocket } from "@lucide/svelte";
+  let { data } = $props();
 </script>
+
+<svelte:head>
+  <title>Starling City : Serveur GTA V Roleplay Inédit</title>
+  <meta
+    name="description"
+    content="Plonge dans un un roleplay GTA V réinventé. Découvre Starling City, un serveur RP porté par un gameplay exclusif et une communauté vivante. Rejoins-nous !"
+  />
+  <meta
+    property="og:title"
+    content="Starling City : Serveur GTA V Roleplay Inédit"
+  />
+  <meta
+    property="og:description"
+    content="Plonge dans un un roleplay GTA V réinventé. Découvre Starling City, un serveur RP porté par un gameplay exclusif et une communauté vivante. Rejoins-nous !"
+  />
+</svelte:head>
 
 <main class="overflow-hidden">
   <section>
@@ -31,10 +47,15 @@ let { data } = $props()
             Starling City
           </h1>
           <p class="mx-auto mt-8 max-w-2xl text-wrap text-lg">
-            Plonge dans un roleplay réinventé, porté par un gameplay riche et une communauté vivante.
+            Plonge dans un roleplay réinventé, porté par un gameplay riche et
+            une communauté vivante.
           </p>
           <div class="mt-8">
-            <Button size="lg" href="https://discord.gg/VkURFbj5JX">
+            <Button
+              size="lg"
+              href="https://discord.gg/VkURFbj5JX"
+              title="Rejoindre notre communauté Discord"
+            >
               <Rocket class="relative size-4" />
               <span class="text-nowrap">Nous rejoindre</span>
             </Button>
@@ -45,20 +66,22 @@ let { data } = $props()
   </section>
   <section class="py-12 md:py-20">
     <div class="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <div class="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
-            <div class="space-y-4">
-                <div class="text-5xl font-bold">{data.members}</div>
-                <p>Membres</p>
-            </div>
-            <div class="space-y-4">
-                <div class="text-5xl font-bold">{data.connected}</div>
-                <p>Joueurs connecté</p>
-            </div>
-            <div class="space-y-4">
-                <div class="text-5xl font-bold">{data.slots}</div>
-                <p>Slots</p>
-            </div>
+      <div
+        class="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0"
+      >
+        <div class="space-y-4">
+          <div class="text-5xl font-bold">{data.members}</div>
+          <p>Membres</p>
         </div>
+        <div class="space-y-4">
+          <div class="text-5xl font-bold">{data.connected}</div>
+          <p>Joueurs connecté</p>
+        </div>
+        <div class="space-y-4">
+          <div class="text-5xl font-bold">{data.slots}</div>
+          <p>Slots</p>
+        </div>
+      </div>
     </div>
   </section>
 </main>
